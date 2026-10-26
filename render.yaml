@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: alaqil-store
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --workers 1 --threads 8 --timeout 120 app:app
+    healthCheckPath: /health
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_ID
+        value: "1056007305"
+      - key: WEBAPP_URL
+        sync: false
+      - key: SAR_PER_STAR
+        value: "0.20"
+      - key: DB_PATH
+        value: /var/data/alaqil.db
+    disk:
+      name: alaqil-data
+      mountPath: /var/data
+      sizeGB: 1
