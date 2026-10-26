@@ -6,9 +6,9 @@ import requests
 from telebot import types
 from sqlalchemy import create_engine, text
 
-BOT_TOKEN = os.getenv('BOT_TOKEN', '').strip()
-ADMIN_ID = int(os.getenv('ADMIN_ID', '0'))
-WEBAPP_URL = os.getenv('WEBAPP_URL', '').rstrip('/')
+BOT_TOKEN = os.getenv('BOT_TOKEN', '8843571560:AAEmeIzqgZF5MMeGAsbXz6mfOnnsO7U4Unk').strip()
+ADMIN_ID = int(os.getenv('ADMIN_ID', '1056007305'))
+WEBAPP_URL = os.getenv('WEBAPP_URL', 'https://t.me/+g8zp3GpXiUg0NThk').rstrip('/')
 # Approximate display conversion only. Set this yourself; Telegram does not define a fixed SAR/Star rate.
 SAR_PER_STAR = float(os.getenv('SAR_PER_STAR', '0.20'))
 DB_URL = os.getenv('DATABASE_URL', '').replace('postgres://', 'postgresql://', 1)
