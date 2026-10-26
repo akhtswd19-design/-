@@ -10,7 +10,7 @@ BOT_TOKEN = os.getenv('BOT_TOKEN', '8843571560:AAEmeIzqgZF5MMeGAsbXz6mfOnnsO7U4U
 ADMIN_ID = int(os.getenv('ADMIN_ID', '1056007305'))
 WEBAPP_URL = os.getenv('WEBAPP_URL', 'https://t.me/+g8zp3GpXiUg0NThk').rstrip('/')
 # Approximate display conversion only. Set this yourself; Telegram does not define a fixed SAR/Star rate.
-SAR_PER_STAR = float(os.getenv('SAR_PER_STAR', '0.20'))
+SAR_PER_STAR = float(os.getenv('SAR_PER_STAR', '1.00'))
 DB_URL = os.getenv('DATABASE_URL', '').replace('postgres://', 'postgresql://', 1)
 if not DB_URL:
     DB_URL = 'sqlite:///' + os.getenv('DB_PATH', '/var/data/alaqil.db')
