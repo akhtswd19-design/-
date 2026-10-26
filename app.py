@@ -13,9 +13,7 @@ WEBAPP_URL = os.getenv('WEBAPP_URL', 'https://t.me/+g8zp3GpXiUg0NThk').rstrip('/
 SAR_PER_STAR = float(os.getenv('SAR_PER_STAR', '1.00'))
 DB_URL = os.getenv('DATABASE_URL', '').replace('postgres://', 'postgresql://', 1)
 if not DB_URL:
-    DB_URL = 'sqlite:///' + os.getenv('DB_PATH', '/var/data/alaqil.db')
-if DB_URL.startswith('sqlite:////var/data'):
-    os.makedirs('/var/data', exist_ok=True)
+    DB_URL = 'sqlite:///alaqil.db'
 engine = create_engine(DB_URL, future=True, pool_pre_ping=True)
 app = Flask(__name__)
 bot = telebot.TeleBot(BOT_TOKEN, parse_mode='HTML') if BOT_TOKEN else None
